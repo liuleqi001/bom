@@ -1,0 +1,32 @@
+server:
+  port: 8081
+  max-http-header-size: 8000000
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bom
+    username: root
+    password: root
+
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 0
+  mvc:
+    static-path-pattern: /**
+
+mybatis:
+  #typeAliasesPackage: com.ge.model
+  mapperLocations: classpath:mybatis/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
